@@ -88,7 +88,8 @@ app.get('/products', (req, res) => {
 })
 
 app.get('/help/*', (req, res) => {
-    res.render('404', {
+    // Send a 404 status and render 404 page
+    res.status(404).render('404', {
         title: '404',
         name: 'Richard Heinz',
         errorMessage: 'Help article not found.'
@@ -97,7 +98,8 @@ app.get('/help/*', (req, res) => {
 
 
 app.get('*', (req, res) => {
-    res.render('404', {
+    // Send 404 status and render 404 page
+    res.status(404).render('404', {
         title: '404',
         name: 'Richard Heinz',
         errorMessage: 'Page not found'
